@@ -1,0 +1,67 @@
+\documentclass[a4paper, 12pt, final, openany, titlepage, twoside]{book}
+
+%permette di aggiungere altri pacchetti dai file inclusi
+\usepackage[subpreambles]{standalone} 
+
+
+%impostazioni lingua
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,italian]{babel}
+
+\usepackage[italian]{varioref}
+
+%sistema i margini
+\usepackage{geometry}
+\geometry{a4paper, top=2cm, bottom=2cm, left=3cm, right=2cm, heightrounded}
+
+%interlinea 1.5
+\usepackage{setspace}
+\onehalfspacing
+
+%gestione delle testatine
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{} \chead{} \rfoot{}
+\rhead{} \lfoot{}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+%formattazione titoli paragrafo
+\usepackage{titlesec}
+\titleformat{\chapter}[display]{\normalfont\huge\bfseries}{Capitolo \thechapter}{0.7em}{\huge}
+
+\usepackage{caption}
+
+\usepackage{afterpage}
+
+
+\usepackage[autostyle,italian=guillemets]{csquotes}
+\usepackage[sorting=nty, style=numeric, citestyle=numeric-comp, backend=biber]{biblatex}
+
+\addbibresource{bibliografia.bib}
+
+%collegamenti ipertestuali
+\usepackage[linktoc=all, colorlinks=true, allcolors=RoyalBlue]{hyperref}
+
+%genera testo casuale
+\usepackage{lipsum}
+
+\begin{document}
+	
+	
+	\frontmatter
+	\input{inizio/frontespizio.tex}
+	\input{inizio/abstract.tex}
+	\input{inizio/indice.tex}
+	
+	
+	\mainmatter
+	\input{capitoli/introduzione.tex}
+	
+	
+	
+	\backmatter
+	\input{fine/bibliografia.tex}
+	
+\end{document}
