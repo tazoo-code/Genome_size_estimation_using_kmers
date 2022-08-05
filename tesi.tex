@@ -1,4 +1,4 @@
-\documentclass[a4paper, 12pt, final, openany, titlepage, twoside]{book}
+\documentclass[a4paper, 12pt, final, openright, titlepage, twoside]{book}
 
 %permette di aggiungere altri pacchetti dai file inclusi
 \usepackage[subpreambles]{standalone} 
@@ -8,6 +8,12 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english,italian]{babel}
+
+
+
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
 
 \usepackage[italian]{varioref}
 
@@ -33,10 +39,13 @@
 
 \usepackage{caption}
 
+\usepackage{amsmath}
+
 \usepackage{afterpage}
 
 
 \usepackage[autostyle,italian=guillemets]{csquotes}
+%sorting=none per citazione in ordine di apparizione, backref=true per mostrare dove una fonte è citata
 \usepackage[sorting=nty, style=numeric, citestyle=numeric-comp, backend=biber]{biblatex}
 
 \addbibresource{bibliografia.bib}
@@ -58,6 +67,7 @@
 	
 	\mainmatter
 	\input{capitoli/introduzione.tex}
+	\input{capitoli/genomescope.tex}
 	
 	
 	
