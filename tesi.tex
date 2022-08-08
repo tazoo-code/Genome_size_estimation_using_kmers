@@ -19,7 +19,7 @@
 
 %sistema i margini
 \usepackage{geometry}
-\geometry{a4paper, top=2cm, bottom=2cm, left=3cm, right=2cm, heightrounded}
+\geometry{a4paper, top=2cm, bottom=2.1cm, inner=3cm, outer=2cm, heightrounded, foot=1.2cm}
 
 %interlinea 1.5
 \usepackage{setspace}
@@ -45,13 +45,16 @@
 
 
 \usepackage[autostyle,italian=guillemets]{csquotes}
-%sorting=none per citazione in ordine di apparizione, backref=true per mostrare dove una fonte è citata
-\usepackage[sorting=nty, style=numeric, citestyle=numeric-comp, backend=biber]{biblatex}
+%sorting=nty per citazione in ordine di cognome, backref=true per mostrare dove una fonte è citata
+\usepackage[sorting=none, style=numeric, citestyle=numeric-comp, backend=biber]{biblatex}
 
 \addbibresource{bibliografia.bib}
 
 %collegamenti ipertestuali
 \usepackage[linktoc=all, colorlinks=true, allcolors=RoyalBlue]{hyperref}
+
+%include il glossario
+\input{preambolo/glossario_preambolo.tex}
 
 %genera testo casuale
 \usepackage{lipsum}
@@ -66,13 +69,14 @@
 	
 	
 	\mainmatter
-	\input{capitoli/introduzione.tex}
-	\input{capitoli/genomescope.tex}
-	
+	\input{capitoli/introduzione/introduzione.tex}
+	\input{capitoli/genomescope/genomescope.tex}
+	\input{capitoli/findGSE/findGSE.tex}
 	
 	
 	
 	\backmatter
+	\input{fine/glossario.tex}
 	\input{fine/bibliografia.tex}
 	
 \end{document}
