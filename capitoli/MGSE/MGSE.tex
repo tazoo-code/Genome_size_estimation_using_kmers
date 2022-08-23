@@ -3,34 +3,13 @@
 \usepackage{lipsum}
 
 \begin{document}
-	\chapter{MGSE}
-	Il programma \textit{Mapping-based Genome Size Estimation} (\textit{MGSE}) stima la dimensione del genoma attraverso la mappatura delle letture a un assembly ad alta contiguità \cite{pucker2019MGSE}. Lo script è open-source e scritto in Python, e processa le informazioni sulla copertura delle letture di input restituendo la dimensione stimata del genoma.
+	\section{MGSE}
+	Il programma \textit{Mapping-based Genome Size Estimation} (\textit{MGSE}) stima la dimensione del genoma attraverso l'assembly delle letture utilizzando un genoma di riferimento ad alta contiguità \cite{pucker2019MGSE} TODO. Lo script è open-source e scritto in Python, e processa le informazioni sulla copertura delle letture di input restituendo la dimensione stimata del genoma.
 	
-	\section{Algoritmo}
-	Posto che le letture siano distribuite equamente sull'intera sequenza del genoma, il programma TODO
+	\subsection{Algoritmo}
+	Posto che le letture di input siano distribuite equamente sull'intera sequenza del genoma, il programma ne stima la dimensione calcolandone la copertura media. Se infatti sono noti il numero $L$ di basi sequenziate e la copertura $C$ in una certa posizione, la lunghezza totale $N$ del genoma sarà pari a $N = L/C$.
+	Dato che le letture sono 
 	
-%	\section{Algoritmo}
-%	Nel programma viene assunto che le frequenze dei k-mer possano essere approssimate da una distribuzione normale asimmetrica $SN(\xi, \omega^2, \alpha)$. Presa in input la distribuzione delle frequenze dei k-mer (k-mer profile), l'algoritmo effettua la regressione determinando i quattro parametri che descrivono una distribuzione normale asimmetrica, la media $\xi$, la deviazione standard $\omega$, l'asimmetria $\alpha$ e un fattore di scala $s$. Ad ogni iterazione, il programma cerca di minimizzare l'errore tra i dati di input e la funzione stimata, in modo da approssimare il più possibile il k-mer profile reale. 
-%	
-%	Dato un genoma aploide con $G$ basi, il numero di k-mer possibili sarà $G-k+1$. Ponendo $C$ la copertura media dei k-mer, cioè che in media ogni k-mer sia trovato in $C$ letture diverse, e $N$ il numero di k-mer trovati nelle letture, la quantità di k-mer presenti nel genoma è descritta dall'equazione~\vref{eqn:findGSE1}. 	
-%	
-%	\begin{equation}
-%		\label{eqn:findGSE1}
-%		N=C*(G-K+1)
-%	\end{equation}
-%		
-%	
-%	Posta la dimensione del genoma molto maggiore del numero di basi utilizzate $G\gg k$, l'equazione~\vref{eqn:findGSE2} approssima la dimensione totale del genoma in analisi.
-%	
-%	\begin{equation}
-%		\label{eqn:findGSE2}
-%		G\approx N/C
-%	\end{equation}
-%
-%	A partire sia dal profilo reale che dal modello stimato, il programma calcola quindi il numero totale di k-mer trovati $N$ e la copertura media dei k-mer $C$, per poi calcolare la dimensione del genoma attraverso l'equazione~\vref{eqn:findGSE2}.
-	
-
-	%TODO risultati?
 	
 
 	

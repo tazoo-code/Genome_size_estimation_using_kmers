@@ -38,6 +38,7 @@
 \titleformat{\chapter}[display]{\normalfont\huge\bfseries}{Capitolo \thechapter}{0.7em}{\huge}
 
 \usepackage{caption}
+\captionsetup{format=hang,labelfont={sf,bf}, font=small}
 
 \usepackage{amsmath}
 
@@ -69,9 +70,11 @@
 	
 	\mainmatter
 	\input{capitoli/introduzione/introduzione.tex}
+	\chapter{Metodi analizzati}
+	\input{capitoli/allpaths/allpaths.tex}
+	\input{capitoli/GCE/GCE.tex}
 	\input{capitoli/genomescope/genomescope.tex}
 	\input{capitoli/findGSE/findGSE.tex}
-	\input{capitoli/GCE/GCE.tex}
 	\input{capitoli/MGSE/MGSE.tex}
 	
 	
