@@ -1,0 +1,15 @@
+\documentclass[crop=false, class=book]{standalone}
+
+\begin{document}
+	\section{MGSE}
+	\label{sec:MGSE}
+	Il programma \textit{Mapping-based Genome Size Estimation} (\textit{MGSE}) stima la dimensione del genoma attraverso il calcolo della copertura media a partire dall'assembly ad alta contiguità delle letture~\cite{pucker2019MGSE}. Lo script è open-source e scritto in Python, e processa le informazioni sulla copertura delle letture di input restituendo la dimensione stimata del genoma.
+	
+	\subsection{Algoritmo}
+	Posto che le letture di input siano distribuite equamente sull'intera sequenza del genoma, il programma ne stima la dimensione calcolandone la copertura media. Se infatti sono noti il numero $L$ di basi sequenziate e la copertura $C$ in una certa posizione, la lunghezza totale $N$ del genoma sarà pari a $N = L/C$.
+	
+	Dato che le letture non forniscono la stessa copertura in tutte le regioni, ad esempio a causa di sequenze ripetitive, per una stima reale della dimensione del genoma è importante un calcolo corretto della copertura media. Per questo, il programma permette all'utente di inserire una lista di regioni di riferimento usate per il calcolo della media e della mediana della copertura. A questo scopo può essere utile il programma \textit{Benchmarking Universal Single Copy Orthologs} (\textit{BUSCO})~\cite{simao2015busco}, che identifica un gruppo di sequenze \textit{bona fidae}, cioè che sono a singola copia e che hanno solo una sola corrispondenza all'interno del genoma~\cite{li2005trumatch}, le quali possono risultare adatte al calcolo della copertura media. 
+	
+	Il programma per poter effettuare la stima della dimensione del genoma riceve in input un file contenente la versione binaria compressa di sequenze allineate (file \textit{bam}~\cite{li2009sequence}), oppure un file contenente informazioni sulla copertura per ogni porzione della sequenza da sequenziare (file \textit{cov}~\cite{pucker2018genome}). Dopo aver calcolato la media e la mediana della copertura, il programma produce in output le dimensioni del genoma stimate per entrambi i valori.
+	
+\end{document}

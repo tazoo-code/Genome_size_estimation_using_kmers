@@ -3,13 +3,12 @@
 %permette di aggiungere altri pacchetti dai file inclusi
 \usepackage[subpreambles]{standalone} 
 
-
 %impostazioni lingua
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english,italian]{babel}
 
-
+%formattazione pseudocodice
 \input{./resources/pseudocode.tex}
 
 \usepackage[dvipsnames]{xcolor}
@@ -37,8 +36,12 @@
 \usepackage{titlesec}
 \titleformat{\chapter}[display]{\normalfont\huge\bfseries}{Capitolo \thechapter}{0.7em}{\huge}
 
+%sistema caption figure
 \usepackage{caption}
 \captionsetup{format=hang,labelfont={sf,bf}, font=small}
+
+%permette utilizzo figure composite
+\usepackage{subfig}
 
 \usepackage{amsmath}
 \usepackage[output-decimal-marker={,}]{siunitx}
@@ -57,31 +60,32 @@
 %include il glossario
 \input{preambolo/glossario_preambolo.tex}
 
-%genera testo casuale
-\usepackage{lipsum}
-
 \begin{document}
-	
 	
 	\frontmatter
 	\input{inizio/frontespizio.tex}
 	\input{inizio/abstract.tex}
 	\input{inizio/indice.tex}
 	
-	
 	\mainmatter
+	% Capitolo 1
 	\input{capitoli/introduzione/introduzione.tex}
-	\chapter{Metodi analizzati}
-	In questo capitolo vengono presentati, in ordine cronologico di pubblicazione, i metodi presi in esame. Ciascun programma viene descritto svolgendo un'analisi dell'algoritmo che lo caratterizza, ed elencando le funzionalità previste per la gestione di eventi particolari, come ad esempio la presenza di errori di sequenziamento. 
-	\input{capitoli/allpaths/allpaths.tex}
-	\input{capitoli/GCE/GCE.tex}
-	\input{capitoli/genomescope/genomescope.tex}
-	\input{capitoli/findGSE/findGSE.tex}
-	\input{capitoli/MGSE/MGSE.tex}
 	
-	\input{capitoli/confronto/confronto.tex}
+	% Capitolo 2
+	\input{capitoli/metodi analizzati/metodi analizzati.tex}
+	\input{capitoli/metodi analizzati/allpaths/allpaths.tex}
+	\input{capitoli/metodi analizzati/GCE/GCE.tex}
+	\input{capitoli/metodi analizzati/genomescope/genomescope.tex}
+	\input{capitoli/metodi analizzati/findGSE/findGSE.tex}
+	\input{capitoli/metodi analizzati/MGSE/MGSE.tex}
 	
+	% Capitolo 3
+	\input{capitoli/analisi/analisi.tex}
+	\input{capitoli/analisi/complessità/complessità.tex}
+	\input{capitoli/analisi/confronto/confronto1/confronto1.tex}
+	\input{capitoli/analisi/confronto/confronto2/confronto2.tex}
 	
+	\input{capitoli/conclusione/conclusione.tex}
 	
 	\backmatter
 	\input{fine/glossario.tex}

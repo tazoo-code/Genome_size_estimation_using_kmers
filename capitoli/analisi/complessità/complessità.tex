@@ -1,0 +1,46 @@
+\documentclass[crop=false, class=book]{standalone}
+
+\begin{document}
+	
+	\section{Complessità e performance}
+	In questo paragrafo vengono analizzate per ciscun metodo la complessità, i requisiti richiesti per l'esecuzione e l'accuratezza dimostrata nei test eseguiti da ciascun gruppo di ricerca. Si noti che la misurazione fatta del numero di righe per ciascun programma considera solo il codice sorgente, escludendo gli spazi bianchi e i commenti.
+	
+	
+	\subsection{ALLPATHS-LG}
+	Dato che il programma ha come obiettivo principale l'assembly delle letture di input, esso presenta una complessità elevata (984 file, 209677 righe di codice). Inoltre, per far sì che il programma possa gestire genomi di grandi dimensioni, si rende necessario l'utilizzo di dispositivi server commerciali, in modo da svolgere l'elaborazione mantenendo in memoria grandi quantità di dati. Per esempio, l'assembly del genoma di un mammifero può essere fatto in alcune settimane utilizzando un server \textit{Dell~R815} con 48 processori e 512 GB di memoria RAM disponibile \cite{gnerre2011high}. Altri metodi di sequenziamento tramite de novo assembly, come ad esempio il programma \mbox{\textit{SOAPdenovo}}~\cite{li2010denovo}, riescono a completare l'assembly in un tempo minore a parità di dati in input e di risorse computazionali disponibili. Nonostante ciò, utilizzando letture di dimensioni minori ma a maggiore copertura, ALLPATHS-LG produce assembly di qualità più elevata rispetto agli altri programmi.
+	
+	Il metodo, essendo molto più complesso e richiedendo maggiori capacità computazionali rispetto agli altri programmi analizzati, può risultare sovradimensionato per la sola stima della dimensione del genoma. Il valore stimato dal software, tuttavia, può risultare utile nel confronto con gli altri metodi.
+	
+	\subsection{GCE}
+	Il programma presenta una complessità media (1150 righe di codice) e permette di stimare la dimensione del genoma tramite uno dei modelli descritti nel paragrafo~\vref{sec:GCE} in base al genoma che si deve analizzare, come ad esempio i modelli omozigote o eterozigote, continuo o discreto.
+	
+	Considerando come genomi di riferimento altri progetti di sequenziamento tramite de novo assembly, come quello dell'E.\  coli-O104:H4~\cite{li2011genomic}, della formica tagliafoglie~\cite{nygaard2011genome}, della patata~\cite{xu2011genome} o del panda~\cite{li2010sequence}, le dimensioni stimate dal programma utilizzando dati simulati dimostrano un'elevata accuratezza. 
+	
+	Nella stima di genomi reali invece, dovendo eseguire un filtraggio e una correzione degli errori sui dati originali per diminuire la complessità della computazione e, quindi, il consumo di memoria, si registra una diminuzione della precisione~\cite{liu2013GCE}. Il valore dedotto dal programma, comunque, può risultare utile per determinare la strategia di sequenziamento di un genoma, e per guidare lo sviluppo di algoritmi per l'assembly. 
+	
+	
+	\subsection{GenomeScope}
+	GenomeScope risulta un programma veloce, dal momento che processa i dati in meno di un minuto con consumi non eccessivi di memoria RAM, e mostrando una complessità media (501 righe di codice). Il programma, inoltre, restituisce in output un file testuale contenente le proprietà del genoma analizzato, oltre a immagini in alta qualità del modello costruito~\cite{vurture2017genomescope}.
+	
+	Nei test eseguiti dal gruppo di ricerca, il programma ha dimostrato un'alta affidabilità: sia nella valutazione di dati simulati di vari organismi variando il rapporto di eterozigosi, il rapporto di duplicazione, la copertura e il numero di errori di sequenziamento, sia sulla stima di genomi reali combinati sinteticamente, il metodo riscontra una buona approssimazione delle caratteristiche delle sequenze. Nell'analisi di dati reali invece, si riscontra una precisione del 99,7\% rispetto alle stime fatte con altri metodi, come genomi di riferimento o \textit{flow cytometry}. 
+
+	Per la maggior parte dei casi viene consigliato l'utilizzo di k-mer con valore $k = 21$, che può essere aumentato per genomi con dimensioni molto elevate (dimensione aploide~$\gg$~10~Gb) o che presentano un elevato numero di sequenze ripetitive. Una scarsa copertura (in genere, minore di $25\times$) o un elevato rapporto di errore di sequenziamento, inoltre, potrebbero impedire al modello di convergere con il k-mer profile reale. La flessibilità del programma nel numero di distribuzioni utilizzate per il fitting, infine, potrebbe risultare adeguata anche per lo studio di genomi poliploidi, che al momento risultano difficilmente trattabili~\cite{sun2017findGSE}.
+
+	
+	\subsection{findGSE}
+	Il programma findGSE, che esegue il fitting di una distribuzione normale asimmetrica al k-mer profile, presenta una complessità media (969 righe di codice) e permette la stima della dimensione del genoma utilizzando risorse modeste. 
+	
+	Nell'analisi di genomi simulati la stima avviene quasi perfettamente, anche applicando variazioni al rapporto di errore di sequenziamento, alla copertura o al livello di eterozigosi. Il valore della stima della dimensione del genoma di \textit{Arabidopsis thaliana} generata dal programma si dimostra leggermente minore al valore trovato tramite il metodo \textit{flow cytometry}, con il quale comunque condivide una forte correlazione~\cite{sun2017findGSE}. 
+	
+	Il programma è stato utilizzato anche per la stima della dimensione di genoma umano. Prendendo come riferimento la versione GRCh38.p9 sviluppata da \textit{The Genome Reference Consortium}, il programma ha riscontrato una differenza di 41 Mb tra i genomi maschile e femminile, similmente alla differenza di 49 Mb tra i due sessi del genoma di riferimento.
+	
+	\subsection{MGSE}
+	MGSE presenta una complessità minore rispetto agli altri programmi presentati (323 righe di codice), e raggiunge le prestazioni migliori con assembly ad alta contiguità~\cite{pucker2019MGSE}. Rispetto alla maggior parte degli altri metodi basati sui k-mer, esso richiede un genoma di riferimento per il calcolo della copertura media, come ad esempio le sequenze individuate dal software \textit{BUSCO}. 
+	
+	Il programma, se l'assembly include tutte le regioni a singola copia e almeno un'occorrenza di quelle ripetitive, si dimostra affidabile. Esso permette inoltre di gestire le regioni contenenti DNA affetto da contaminazioni batteriche o fungine, nel caso in cui esse non siano incluse nelle sequenze di riferimento, procedendo con l'esclusione delle letture corrispondenti. 
+	
+	Invece, nel caso in cui solo alcune sequenze di input siano state duplicate tramite PCR, risulta impossibile distinguere tali copie dalle sequenze presenti nel genoma reale in più di una regione. Il programma comunque prevede una certa tolleranza se la duplicazione è stata fatta equamente su tutte le letture di input.
+
+
+	
+\end{document}
