@@ -4,6 +4,19 @@
 	\chapter*{Conclusioni}
 	\phantomsection
 	\addcontentsline{toc}{chapter}{Conclusioni}	
-	
 
+	Il presente elaborato si è posto l'obiettivo di analizzare e confrontare i principali metodi di stima della dimensione del genoma tramite k-mer.
+	
+	Dopo una breve panoramica sui principali metodi di sequenziamento e di misurazione della dimensione del genoma attualmente disponibili, sono stati introdotti i k-mer e le loro principali proprietà. L'esposizione è quindi proseguita con l'analisi di ogni metodo, a partire dal punto di vista algoritmico e di gestione di casi particolari, fino alla valutazione della complessità e delle performance di ciascuno. Infine, l'analisi sperimentale dei risultati generati dai programmi ha permesso un confronto vero e proprio tra i metodi.
+	
+	Dall'analisi degli approcci basati sui k-mer emerge che il metodo ALLPATHS-LG risulta sovradimensionato per la sola stima della dimensione e poco preciso in situazioni particolari, come nel caso di bassa copertura o alto tasso di errore di sequenziamento; il programma GCE, inoltre, tende solitamente a sottostimare la dimensione del genoma. GenomeScope, pur riscontrando problemi nel caso di una copertura scarsa nelle letture di input, sembra essere un metodo di stima discreto. Infine, findGSE sembra possedere l'approccio più promettente, avendo anche un'alta correlazione con il metodo flow cytometry.
+	
+	Per quanto riguarda il programma MGSE, che presenta una complessità minore ma richiede informazioni più strutturate rispetto ai concorrenti, risulta un metodo efficiente nel caso di genomi di dimensioni ridotte. Infatti, la stima tramite la copertura ricavata dalle regioni BUSCO si dimostra precisa anche nei casi in cui altri metodi falliscono. Il programma, tuttavia, risulta poco accurato nell'analisi di genomi più particolari, come ad esempio un alto tasso di eterozigosi o un gran numero di \glspl{trasposone}. 
+	
+	Non esistendo attualmente un metodo affidabile che restituisca un valore di dimensione preciso per un genoma, risulta difficile determinare in modo assoluto il migliore tra i programmi trattati. In generale, si evince che alcuni metodi abbiano prestazioni migliori per certe tipologie di sequenze rispetto ad altri, ma che tutti riscontrino difficoltà nella trattazione di genomi di grandi dimensioni. 
+	
+	La stima della grandezza del genoma basata sui k-mer, assieme al metodo MGSE basato sull'individuazione di sequenze presenti in singola copia, comunque, anche grazie ai limitati requisiti richiesti, risultano essere approcci promettenti per lo sviluppo futuro di metodi più precisi ed efficienti.
+	
+	
+	
 \end{document}

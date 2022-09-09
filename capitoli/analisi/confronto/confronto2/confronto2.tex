@@ -8,23 +8,23 @@
 	Dopo una comparazione iniziale processando due diversi ecotipi di \textit{Arabidopsis thaliana}, i programmi vengono utilizzati per la stima della dimensione di genomi con grandezze e complessità maggiori, come le specie \textit{Beta vulgaris}, \textit{Brachypodium distachyon}, \textit{Solanum lycopersicum}, \textit{Zea mays} e \textit{Vitis vinifera}. 
 		
 	\paragraph{Stima della dimensione di \textit{A. thaliana}}
-	Inizialmente i programmi in esame vengono utilizzati per il calcolo della dimensione delle varianti Col-0 e Nd-1 di \textit{Arabidopsis thaliana}. Per i metodi GenomeScope, GCE e findGSE la stima viene fatta utilizzando k-mer di taglia $k = 19, 21, 23 \text{ e } 25$, mentre per il programma MGSE vengono selezionate la media e la mediana di varie porzioni del genoma (selezione manuale dei geni a singola copia, sottosequenze contenenti i geni codificanti proteine, esoni dei gruppi precedenti, sequenze restituite dal software \textit{BUSCO}).
+	Inizialmente i programmi in esame vengono utilizzati per il calcolo della dimensione delle varianti Col-0 e Nd-1 di \textit{Arabidopsis thaliana}. Per i metodi GenomeScope, GCE e findGSE la stima viene fatta utilizzando k-mer di taglia $k = 19, 21, 23 \text{ e } 25$, mentre per il programma MGSE vengono selezionate la media e la mediana di varie porzioni del genoma (selezione manuale dei geni a singola copia, sottosequenze contenenti i geni codificanti proteine, \glspl{esone} dei gruppi precedenti, sequenze restituite dal software \textit{BUSCO}).
 	
-	La dimensione dell'assembly dell'ecotipo Col-0 di \textit{A. thaliana} analizzato è di 120~Mb \cite{initiative2000analysis}. Molte delle stime fatte dai programmi generano risultati minori di tale valore, come mostra la figura~\vref{fig:2confronto1a}. I metodi GenomeScope e MGSE (utilizzando le sequenze restituite da BUSCO) generano valori compatibili con la dimensione stimata; i metodi GCE e findGSE, invece, restituiscono rispettivamente valori in media più ridotti o elevati.
+	La dimensione dell'assembly dell'\gls{ecotipo} Col-0 di \textit{A. thaliana} analizzato è di 120~Mb \cite{initiative2000analysis}. Molte delle stime fatte dai programmi generano risultati minori di tale valore, come mostra la figura~\vref{fig:2confronto1a}. I metodi GenomeScope e MGSE (utilizzando le sequenze restituite da BUSCO) generano valori compatibili con la dimensione stimata; i metodi GCE e findGSE, invece, restituiscono rispettivamente valori in media più ridotti o elevati.
 	
 	\begin{figure}[htp]
 		\centering
 		\includegraphics[width=0.7\textwidth]{capitoli/analisi/confronto/confronto2/1a.png}
-		\caption{Dimensioni stimate dai metodi rispetto $n$ campioni di ecotipo Col-0 di \textit{A. thaliana}. Per il metodo MGSE vengono scelte la media o la mediana di porzioni diverse di genoma. La figura mostra per ciascun metodo il valor medio (in verde) e la mediana $m$ (in giallo).}
+		\caption{Dimensioni stimate dai metodi rispetto $n$ campioni di \gls{ecotipo} Col-0 di \textit{A. thaliana}. Per il metodo MGSE vengono scelte la media o la mediana di porzioni diverse di genoma. La figura mostra per ciascun metodo il valor medio (in verde) e la mediana $m$ (in giallo).}
 		\label{fig:2confronto1a}
 	\end{figure}
 		
-	Nell'analisi dell'ecotipo Nd-1 mostrata dalla figura~\ref{fig:2confronto1b}, il metodo MGSE (sequenze BUSCO) mostra una differenza evidente nella stima della dimensione utilizzando la media o la mediana della copertura. Il valore stimato da MGSE attraverso la media delle sequenze BUSCO risulta il più affidabile, con una dimensione reale stimata di 138-140~Mb \cite{pucker2016denovo}. Mentre GCE restituisce un valore più plausibile, i metodi GenomeScope e findGSE generano una dimensione la cui correttezza risulta poco probabile.
+	Nell'analisi dell'\gls{ecotipo} Nd-1 mostrata dalla figura~\ref{fig:2confronto1b}, il metodo MGSE (sequenze BUSCO) mostra una differenza evidente nella stima della dimensione utilizzando la media o la mediana della copertura. Il valore stimato da MGSE attraverso la media delle sequenze BUSCO risulta il più affidabile, con una dimensione reale stimata di 138-140~Mb \cite{pucker2016denovo}. Mentre GCE restituisce un valore più plausibile, i metodi GenomeScope e findGSE generano una dimensione la cui correttezza risulta poco probabile.
 
 	\begin{figure}[]
 		\centering
 		\includegraphics[width=0.7\textwidth]{capitoli/analisi/confronto/confronto2/1b.png}
-		\caption{Dimensioni stimate dai metodi rispetto $n$ campioni di ecotipo Nd-1 di \textit{A. thaliana}. Per il metodo MGSE vengono scelte la media o la mediana di porzioni diverse di genoma. La figura mostra per ciascun metodo il valor medio (in verde) e la mediana $m$ (in giallo).}
+		\caption{Dimensioni stimate dai metodi rispetto $n$ campioni di \gls{ecotipo} Nd-1 di \textit{A. thaliana}. Per il metodo MGSE vengono scelte la media o la mediana di porzioni diverse di genoma. La figura mostra per ciascun metodo il valor medio (in verde) e la mediana $m$ (in giallo).}
 		\label{fig:2confronto1b}
 	\end{figure}
 	
@@ -33,7 +33,7 @@
 	\begin{figure}[]
 		\centering
 		\includegraphics[width=0.7\textwidth]{capitoli/analisi/confronto/confronto2/2.png}
-		\caption{Stima della dimensione di 1028 sequenze di \textit{A. thaliana}. I risultati metodi findGSE, GCE e GenomeScope vengono mostrati in funzione delle stime del metodo MGSE. Eventuali outlier vengono rappresentati sul bordo del grafico, permettendo una maggiore risoluzione alla nuvola centrale.}
+		\caption{Stima della dimensione di 1028 sequenze di \textit{A. thaliana}. I risultati dei metodi findGSE, GCE e GenomeScope vengono mostrati in funzione delle stime del metodo MGSE. Eventuali outlier vengono rappresentati sul bordo del grafico, permettendo una maggiore risoluzione alla nuvola centrale.}
 		\label{fig:2confronto3}
 	\end{figure} 
 
@@ -50,12 +50,12 @@
 	\end{figure} 
 
 	\paragraph{Dimensione di genomi di altre specie}
-	L'analisi continua con la stima delle dimensioni di genomi di varie specie, ciascuna con caratteristiche diverse: il \textit{Brachypodium distachyon} come modello di pianta erbacea, il pomodoro (\textit{Solanum lycopersicum}) per il clade delle Asteridi, il mais (\textit{Zea mays}) è stato incluso come specie monocotiledone ad alto contenuto di trasposoni, e la vite comune (\textit{Vitis vinifera}) per la sua elevata eterozigosi.
+	L'analisi continua con la stima delle dimensioni di genomi di varie specie, ciascuna con caratteristiche diverse: il \textit{Brachypodium distachyon} come modello di pianta erbacea, il pomodoro (\textit{Solanum lycopersicum}) per il \gls{clade} delle Asteridi, il mais (\textit{Zea mays}) è stato incluso come specie monocotiledone ad alto contenuto di \glspl{trasposone}, e la vite comune (\textit{Vitis vinifera}) per la sua elevata eterozigosi.
 	
 	I programmi, come mostrato dalla figura~\vref{fig:2confronto5}, restituiscono generalmente risultati appartenenti al medesimo intervallo. Nella stima della dimensione di \textit{B. distachyon}, mentre MGSE, GenomeScope e GCE tendono a generare valori non corretti, findGSE stima una previsione ragionevole di 303 Mb, a fronte di una lunghezza stimata di circa 355 Mb \cite{ozdemir2008brachypodium}. 
 	La dimensione del genoma di \textit{Z. mays} è ampiamente sottostimata da tutti i programmi, dato che la lunghezza stimata risulta di 2.4 Gb \cite{haberer2005structure}. 
 	A differenza di MGSE e GCE, i programmi findGSE e GenomeScope stimano correttamente la lunghezza attesa di \textit{S. lycopersicum} (950 Mb \cite{barone2008structural}).	
-	A causa dell'alta eterozigosi, MGSE restituisce un valore di soli 50 Mbp per il genoma di \textit{V. vinifera}, mentre il programma GenomeScope restituisce un valore plausibile, avendo una dimensione stimata è di 475~Mb~\cite{myles2010rapid}.
+	A causa dell'alta eterozigosi, MGSE restituisce un valore di soli 50 Mbp per il genoma di \textit{V. vinifera}, mentre il programma GenomeScope restituisce un valore plausibile, avendo una dimensione stimata di 475~Mb~\cite{myles2010rapid}.
 
 	\begin{figure}
 		\centering

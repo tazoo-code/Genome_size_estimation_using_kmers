@@ -31,11 +31,11 @@
 	\end{figure}
 
 	\paragraph{Influenza dell'eterozigosi}
-	Per la valutazione dell'impatto dell'eterozigosi, è stata considerata una sequenza con copertura 30$\times$, un rapporto di errore di sequenziamento dell'1\% e un rapporto di mutazioni SNP da 0,1 a 5,0\%. Per livelli bassi di eterozigosi (da 0,1 a 1,0\%) tutti i metodi risultano precisi e concordi, come mostrato dalla figura~\ref{fig:confronto3}. 
+	Per la valutazione dell'impatto dell'eterozigosi, è stata considerata una sequenza con copertura 30$\times$, un rapporto di errore di sequenziamento dell'1\% e un rapporto di mutazioni \gls{snp} da 0,1 a 5,0\%. Per livelli bassi di eterozigosi (da 0,1 a 1,0\%) tutti i metodi risultano precisi e concordi, come mostrato dalla figura~\ref{fig:confronto3}. 
 	
-	Aumentando il rapporto di eterozigosi (da 2,0 a 5,0\%), la discrepanza tra i valori predetti e quello reale aumenta considerevolmente: su un totale di 280 stime per metodo infatti, i programmi ALLPATHS-LG e GenomeScope hanno generato valori doppi rispetto alla grandezza reale rispettivamente in 150 e 29 previsioni. Le stime erronee dei due programmi sono dovute all'erronea selezione del picco eterozigote come se fosse quello omozigote, che porta a un calcolo non corretto della copertura e quindi al raddoppio della dimensione totale stimata. Gli stessi metodi hanno riportato valori nulli o estremamente bassi rispettivamente in 110 e 173 casi, generando quindi in totale valori erronei con probabilità del 92,9\% per \mbox{ALLPATHS-LG} e del 72,1\% per \mbox{GenomeScope}. 
+	Aumentando il \gls{rate_eterozigosity} (da 2,0 a 5,0\%), la discrepanza tra i valori predetti e quello reale aumenta considerevolmente: su un totale di 280 stime per metodo infatti, i programmi ALLPATHS-LG e GenomeScope hanno generato valori doppi rispetto alla grandezza reale rispettivamente in 150 e 29 previsioni. Le stime erronee dei due programmi sono dovute all'erronea selezione del picco eterozigote come se fosse quello omozigote, che porta a un calcolo non corretto della copertura e quindi al raddoppio della dimensione totale stimata. Gli stessi metodi hanno riportato valori nulli o estremamente bassi rispettivamente in 110 e 173 casi, generando quindi in totale valori erronei con probabilità del 92,9\% per \mbox{ALLPATHS-LG} e del 72,1\% per \mbox{GenomeScope}. 
 	Anche nel caso del metodo GCE, un alto tasso di eterozigosi fa generare al programma 120 valori errati su 280 totali, cioè nel 42,9\% delle predizioni. 
-	Il metodo findGSE si dimostra poco influenzato dall'aumento del rapporto di eterozigosi, che nel peggiore dei casi fa sovrastimare di poco la dimensione del genoma \mbox{(125 $\pm$ 7 Mb)}.
+	Il metodo findGSE si dimostra poco influenzato dall'aumento del \gls{rate_eterozigosity}, che nel peggiore dei casi fa sovrastimare di poco la dimensione del genoma \mbox{(125 $\pm$ 7 Mb)}.
  
  	\begin{figure}
  		\centering
@@ -46,7 +46,7 @@
  
  	Mantenendo elevato il tasso di errore di sequenziamento, l'aumento della copertura minima a 100$\times$ (figura~\ref{fig:confronto4}) diminuisce il numero di stime non corrette per i metodi ALLPATHS-LG e GenomeScope, generando rispettivamente 60 (21,4\%) e 110 (39,3\%) valori errati. 
  	Il programma GCE invece, anche all'aumentare della copertura produce molti risultati errati, 210 su 280 totali (75\%).
- 	Il metodo findGSE infine si dimostra molto accurato anche ad un alto rapporto di eterozigosi, stimando una dimensione media di \mbox{121 $\pm$ 1 Mb}. 
+ 	Il metodo findGSE infine si dimostra molto accurato anche ad un alto \gls{rate_eterozigosity}, stimando una dimensione media di \mbox{121 $\pm$ 1 Mb}. 
  	Il programma GenomeScope, tralasciando il problema di duplicazione della dimensione, si dimostra quello con i risultati più stabili tra i  metodi analizzati.
  	
 	 \begin{figure} 
@@ -85,7 +85,7 @@
 			{\includegraphics[width=0.37\textwidth]{capitoli/analisi/confronto/confronto1/l.png}} \qquad 
 		\subfloat[][\emph{Correlazione tra i valori stimati da findGSE e flow cytometry.}\label{fig:confronto6d}]
 			{\includegraphics[width=0.37\textwidth]{capitoli/analisi/confronto/confronto1/m.png}} 
-		\caption{Correlazione tra i metodi analizzati e flow cytometry. In ciascuna figura sono raffigurate anche la regressione lineare e il coefficiente di correlazione di Pearson $r$.}
+		\caption{Correlazione tra i metodi analizzati e flow cytometry. In ciascuna figura sono raffigurate anche la regressione lineare e il \gls{pcc} $r$.}
 		\label{fig:confronto6}
 	\end{figure}
 

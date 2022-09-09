@@ -41,13 +41,13 @@
 	\subsection{Gestione di genomi di grandi dimensioni}
 	I predecessori di ALLPATHS-LG ottengono risultati promettenti solo per genomi di piccole dimensioni. Per gestire genomi di dimensioni più grandi, come quelli dei mammiferi, sono state fatte delle modifiche notevoli~\cite{gnerre2011high}.
 
-	Il programma cerca di comprimere le ripetizioni in modo da favorirne l'allineamento. Se una sequenza ripetitiva è presente in due letture separate, il programma utilizza un'altra coppia di shotgun per poter allineare le prime due (\textit{gap filling}). Le letture vengono unite se un'altra coppia fornisce una sovrapposizione, e viceversa. Il metodo può essere utilizzato anche se sono presenti mutazioni \gls{snp}, che forniscono più soluzioni di assemblamento. La figura~\vref{fig:allpathsfilling} tratta da~\cite{gnerre2011high}, mostra come avviene la gestione delle sequenze ripetitive nei due diversi casi.
+	Il programma cerca di comprimere le ripetizioni in modo da favorirne l'allineamento. Se una sequenza ripetitiva è presente in due letture separate, il programma utilizza un'altra coppia di shotgun per poter allineare le prime due (\textit{gap filling}). Le letture vengono unite se un'altra coppia fornisce una sovrapposizione, e viceversa. Il metodo può essere utilizzato anche se sono presenti \glspl{snp}, che forniscono più soluzioni di assemblamento. La figura~\vref{fig:allpathsfilling} tratta da~\cite{gnerre2011high}, mostra come avviene la gestione delle sequenze ripetitive nei due diversi casi.
 
 	\begin{figure}
 		\centering
 		\subfloat[][\emph{L'allineamento della coppia di letture in nero è possibile usando un'altra coppia di letture, raffigurate in rosso.}]
 		{\includegraphics[width=0.6\textwidth]{capitoli/metodi analizzati/allpaths/filling1.png}} \\
-		\subfloat[][\emph{Le due coppie di letture in rosso potrebbero allineare la coppia di letture in nero, ma presentano un SNP. Vengono quindi mantenute entrambe, fornendo due diverse soluzioni possibili.}]
+		\subfloat[][\emph{Le due coppie di letture in rosso potrebbero allineare la coppia di letture in nero, ma presentano una mutazione \gls{snp}. Vengono quindi mantenute entrambe, fornendo due diverse soluzioni possibili.}]
 		{\includegraphics[width=0.6\textwidth]{capitoli/metodi analizzati/allpaths/filling2.png}} 
 		\caption{Esempi grafici del processo di gap filling.}
 		\label{fig:allpathsfilling}

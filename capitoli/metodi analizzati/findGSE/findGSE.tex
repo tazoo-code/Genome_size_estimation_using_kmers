@@ -6,17 +6,17 @@
 	Il programma \textit{findGSE}~\cite{sun2017findGSE} ha come obiettivo principale la stima della lunghezza del genoma. Utilizzando le frequenze dei k-mer trovati nelle letture a disposizione, il programma compie una regressione non lineare dei dati utilizzando come funzione una \gls{snd} (\textit{skew normal distribution}~\cite{azzalini1985class,azzalini2005skew}).
 	
 	\subsection{Algoritmo}
-	Nel programma viene assunto che le frequenze dei k-mer possano essere approssimate da una distribuzione normale asimmetrica $Y \sim \mathcal{SN}(\xi, \omega^2, \alpha)$. Presa in input la distribuzione delle frequenze dei k-mer (k-mer profile), l'algoritmo effettua la regressione determinando i quattro parametri che descrivono una distribuzione normale asimmetrica, la media $\xi$, la deviazione standard $\omega$, l'asimmetria $\alpha$ e un fattore di scala $s$. Ad ogni iterazione, il programma cerca di minimizzare l'errore tra i dati di input e la funzione stimata, in modo da approssimare il più possibile il k-mer profile reale. La figura~\vref{fig:findGSEfitting} mostra come viene effettuato iterativamente il fitting del k-mer profile utilizzando come funzione la suddetta distribuzione.
+	Nel programma viene assunto che le frequenze dei k-mer possano essere approssimate da una \gls{snd} $Y \sim \mathcal{SN}(\xi, \omega^2, \alpha)$. Presa in input la distribuzione delle frequenze dei k-mer (k-mer profile), l'algoritmo effettua la regressione determinando i quattro parametri che descrivono una \gls{snd}, la media $\xi$, la deviazione standard $\omega$, l'asimmetria $\alpha$ e un fattore di scala $s$. Ad ogni iterazione, il programma cerca di minimizzare l'errore tra i dati di input e la funzione stimata, in modo da approssimare il più possibile il k-mer profile reale. La figura~\vref{fig:findGSEfitting} mostra come viene effettuato iterativamente il \gls{fitting} del k-mer profile utilizzando come funzione la suddetta distribuzione.
 	
 	\begin{figure}[h]
 		\centering
-		\subfloat[][\emph{Primo fitting dei dati dalle letture di input.}]
+		\subfloat[][\emph{Primo \gls{fitting} dei dati dalle letture di input.}]
 		{\includegraphics[width=0.31\textwidth]{capitoli/metodi analizzati/findGSE/fittingA.png}} \quad
-		\subfloat[][\emph{Secondo fitting, utilizzando anche i k-mer residui dalla precedente operazione.}]
+		\subfloat[][\emph{Secondo \gls{fitting}, utilizzando anche i k-mer residui dalla precedente operazione.}]
 		{\includegraphics[width=0.31\textwidth]{capitoli/metodi analizzati/findGSE/fittingB.png}} \quad
-		\subfloat[][\emph{Fitting finale.}]
+		\subfloat[][\emph{\gls{fitting} finale.}]
 		{\includegraphics[width=0.31\textwidth]{capitoli/metodi analizzati/findGSE/fittingC.png}} 
-		\caption{Esempio di fitting iterativo del k-mer profile.}
+		\caption{Esempio di \gls{fitting} iterativo del k-mer profile.}
 		\label{fig:findGSEfitting}
 	\end{figure}
 
